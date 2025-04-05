@@ -22,3 +22,11 @@ document.addEventListener("click", function (event) {
     MenuItems.classList.remove("show");
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menuIcon");
+    if (menuIcon) {
+      menuIcon.onclick = menutoggle;
+    }
+  });
