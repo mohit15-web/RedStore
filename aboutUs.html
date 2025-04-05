@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Company Name</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4299e1;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(to right, #4299e1, #667eea);
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            text-align: center;
+        }
+        
+        /* Our story */
+        .our-story {
+            background-color: white;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 4rem;
+        }
+        
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .story-content p {
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        
+        /* Team section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-img {
+            width: 100%;
+            height: 250px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+        
+        .member-info h4 {
+            color: #4299e1;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .member-info p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+        
+        /* Values section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4299e1;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+        
+        .value-card p {
+            color: #718096;
+        }
+        
+        /* CTA section */
+        .cta {
+            background: linear-gradient(to right, #4299e1, #667eea);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            margin-top: 4rem;
+            border-radius: 8px;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #4299e1;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 4rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-info p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: white;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 0.75rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 8rem 1rem 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 3rem 1rem;
+            }
+            
+            .our-story {
+                padding: 2rem 1rem;
+            }
+            
+            .team-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<style>
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      margin-right: 20px;
+    }
+    
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+    
+    nav ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: #ff523b;
+    }
+    
+    .nav-icons {
+      display: flex;
+      align-items: center;
+    }
+    
+    .cart-icon {
+      margin-right: 15px;
+    }
+    
+    .menu-icon {
+      width: 28px;
+      height: 28px;
+      display: none;
+      cursor: pointer;
+    }
+    
+    /* Media Query for Mobile Screens */
+    @media only screen and (max-width: 800px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #f8f8f8;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      nav ul li {
+        display: block;
+        margin: 0;
+        padding: 15px 25px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+      
+      nav ul.show {
+        max-height: 400px;
+      }
+      
+      .logo img {
+        width: 100px;
+      }
+    }
+    
+    @media only screen and (max-width: 500px) {
+      .navbar {
+        padding: 15px 10px;
+      }
+      
+      .logo img {
+        width: 80px;
+      }
+      
+      .cart-icon img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- <div class="container"> -->
+        <div class="navbar">
+            <div class="logo">
+              <a href="index.html">
+                <img src="./assets/images/logo.png" alt="Logo" width="125px" />
+              </a>
+            </div>
+            
+            <nav>
+              <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="./aboutUs.html">About</a></li>
+                <li><a href="./account.html">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+              </ul>
+            </nav>
+            
+            <div class="nav-icons">
+              <a href="cart.html" class="cart-icon">
+                <img src="./assets/images/cart.png" alt="Cart" width="30px" height="30px" />
+              </a>
+              <img 
+                src="./assets/images/menu.png" 
+                alt="Menu" 
+                class="menu-icon" 
+                onclick="menutoggle()" 
+              />
+            </div>
+          </div>
+      <!-- </div> -->
+    
+    <!-- Hero section -->
+    <section class="hero">
+        <h1>Our Story & Mission</h1>
+        <p>We're passionate about creating innovative solutions that transform industries and improve lives.</p>
+    </section>
+    
+    <!-- Main content -->
+    <main class="container">
+        <!-- Our Story Section -->
+        <section class="our-story">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="story-content">
+                <p>Founded in 2010, Company Name began as a small team of passionate innovators with a shared vision: to revolutionize the way businesses approach digital transformation. What started as a modest startup has now grown into a leading force in our industry, serving clients worldwide.</p>
+                
+                <p>Through years of dedication, research, and countless cups of coffee, we've developed a unique approach to solving complex problems. Our journey hasn't always been easy, but our commitment to excellence and innovation has never wavered.</p>
+                
+                <p>Today, we're proud to have a diverse team of experts across multiple disciplines, all working together to create solutions that make a real difference. Our work has been recognized with numerous industry awards, but our greatest achievement is the trust our clients place in us day after day.</p>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section>
+            <h2 class="section-title">Meet Our Leadership</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/250/250" alt="CEO placeholder" />
+                    </div>
+                    <div class="member-info">
+                        <h3>Jane Doe</h3>
+                        <h4>Chief Executive Officer</h4>
+                        <p>With over 15 years of industry experience, Jane leads our company with vision and determination.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/250/250" alt="CTO placeholder" />
+                    </div>
+                    <div class="member-info">
+                        <h3>John Smith</h3>
+                        <h4>Chief Technology Officer</h4>
+                        <p>John brings technical expertise and innovation strategy that keeps us at the cutting edge.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/250/250" alt="COO placeholder" />
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <h4>Chief Operations Officer</h4>
+                        <p>Sarah ensures our operations run smoothly so we can deliver exceptional results to clients.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/250/250" alt="CMO placeholder" />
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <h4>Chief Marketing Officer</h4>
+                        <p>Michael crafts our brand story and ensures our solutions reach those who need them most.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section>
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">★</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries and explore new ideas to create solutions that drive meaningful change.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">♦</div>
+                    <h3>Excellence</h3>
+                    <p>We're committed to delivering exceptional quality in everything we do, exceeding expectations at every turn.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">♥</div>
+                    <h3>Integrity</h3>
+                    <p>We operate with transparency, honesty, and ethical responsibility in all our business relationships.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">♣</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe in the power of diverse perspectives and teamwork to create exceptional outcomes.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">●</div>
+                    <h3>Impact</h3>
+                    <p>We measure our success by the positive difference we make for our clients and communities.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">◆</div>
+                    <h3>Adaptability</h3>
+                    <p>We embrace change and remain flexible to meet evolving challenges in a dynamic world.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Work Together?</h2>
+            <p>We're always looking to collaborate with forward-thinking clients who want to make an impact. Let's start a conversation about your needs.</p>
+            <a href="#" class="cta-button">Get in Touch</a>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">Company Name</div>
+                <p>Creating innovative solutions for a digital world since 2010.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>123 Innovation Street</p>
+                <p>Tech City, TC 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@companyname.com</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">FB</a>
+                    <a href="#" class="social-link">TW</a>
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">LI</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../assets/js/toggleMenu.js"></script>
+</body>
+</html>
